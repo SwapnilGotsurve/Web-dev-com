@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="max-width:w-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baggage</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.js"
+      integrity="sha512-alUs/9QWS9TdxYygQKopHrjMK9T+Tun55+1EKgiG8lCSHSL2Br7p69RsCFCycu2T2I707/8Y0vkyjTVGHdfHUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@splinetool/runtime@1.12.0/build/runtime.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@splinetool/runtime@latest/build/spline.js"></script> -->
+
+    <!-- font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/ef1a12d4a2.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- gsap cdn  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- google fonts    -->
+    <!-- logo f -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Boldonse&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Permanent+Marker&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- color pallate -->
+  </head>
+  <body>
+    <!-- header  part-->
+
+    <header
+      class="flex justify-between content-center items-center h-17 sticky top-5 w-[95%] rounded-sm mx-10 px-5 z-50"
+    >
+      <div>
+        <a href="/index.html" class="text-3xl text-[#e0ff9b] logo">BAGGAGE </a>
+      </div>
+      <nav
+        class="flex justify-evenly content-center list-none w-150 text-xl text-white"
+      >
+        <li class="hover:text-[#dfff98]"><a href="/index.html">Home</a></li>
+        <li class="hover:text-[#dfff98]">
+          <a href="/collections.html">Collections</a>
+        </li>
+        <li class="hover:text-[#dfff98]"><a href="/about.html">About</a></li>
+        <li class="hover:text-[#dfff98]">
+          <a href="/contact.html">Contact</a>
+        </li>
+      </nav>
+    </header>
+
+    <!-- hero section1 -->
+
+    <section class="bg-[#000] hero-section grid grid-cols-2 mt-0 px-20">
+      <!-- left section    -->
+      <div class="left relative w-160 mt-36 z-2">
+        <p class="text-sm mb-4 font-semibold text-gray-300">
+         <span class="bg-[#ffffff25] p-2 px-4 rounded-4xl"> PREMIUM TRAVEL COMPANIONS</span>
+        </p>
+        <h1 class="text-[#e0ff9b] text-7xl bangers-regular font-bold">
+          <span class="text-white"
+            ><span
+              class=""
+              style="
+                color: white;
+                color: rgba(0, 0, 0, 0); /* Fill color of the text */
+                -webkit-text-stroke-width: 1px; /* Width of the stroke */
+                -webkit-text-stroke-color: rgb(
+                  255,
+                  255,
+                  255
+                ); /* Color of the stroke */
+              "
+              >Journey</span
+            >
+            in</span
+          >
+          Timeless Style
+        </h1>
+        <h3 class="text-lg mt-10 lato-regular-italic text-[#d5d5d5cb]">
+          Handcrafted luggage that combines heritage craftsmanship with modern
+          innovation. Built to last a lifetime of adventures.
+        </h3>
+
+        <div class="hero-buttons flex gap-4 my-10">
+          <button
+            style="
+              background: linear-gradient(
+                91deg,
+                rgba(223, 255, 152, 0.93) 7%,
+                rgba(244, 255, 222, 1) 48%,
+                rgba(223, 255, 152, 1) 80%
+              );
+            "
+            class="bg-[#e0ff9b] cta-btn border w-55 text-lg rounded-lg py-2 text-black border-1"
+          >
+            <a href="/collections.html">Shop Collections</a>
+            <span class="arrow ml-1"
+              ><i class="fa-solid fa-arrow-right"></i
+            ></span>
+          </button>
+          <span
+            class="m2-btn"
+            style="
+              background: linear-gradient(
+                91deg,
+                rgba(247, 247, 247, 0.511) 29%,
+                rgba(160, 160, 160, 0.219) 92%
+              );
+            "
+            ><button
+              class="border border-[#e0ff9b] text-[#fff] w-55 text-lg rounded-lg py-2"
+            >
+              <a href="/about.html">Our Story</a>
+            </button></span
+          >
+        </div>
+
+        <!-- features 1  -->
+        <div class="flex gap-5 text-lg py-6">
+          <div class="flex content-center justify-center">
+            <div class="text-3xl mx-4 text-[#d5d5d5cb]">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <p class="pt-1 text-[#d5d5d5cb]">Free Shipping</p>
+          </div>
+          <div class="flex content-center justify-center">
+            <div class="text-3xl mx-4 text-[#d5d5d5cb]">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <p class="pt-1 text-[#d5d5d5cb]">100-Day Trial</p>
+          </div>
+          <div class="flex content-center justify-center">
+            <div class="text-3xl mx-4 text-[#d5d5d5cb]">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <p class="pt-1 text-[#d5d5d5cb]">Lifetime Warranty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- right section      -->
+      <!-- sunlight  -->
+      <div class="sunlight1"></div>
+      <div class="model-viewer border border-white">
+        <model-viewer
+          src="./chanel_leather_bag_for_women.glb"
+          auto-rotate
+          camera-controls
+          style="width: 100vw; height: 100vh; margin-right: 50%"
+        >
+        </model-viewer>
+      </div>
+    </section>
+
+    <!-- section 2 -->
+    <section>
+      <h1 class=" text-white text-6xl font-bold text-center mt-28 mb-6">
+        Explore Our <span class="text-[#dfff98]">Collections</span>
+      </h1>
+      <p class="text-[#d5d5d5cb] text-center text-2xl">
+        From carry-ons to weekenders, find the perfect companion for every
+        journey
+      </p>
+
+      <div class="grid grid-cols-4 gap-8 mx-20 rounded-lg mt-20">
+        <!-- <div
+          class="border px-2 rounded-lg rounded-lg bg-card text-card-foreground shadow-sm overflow-hidden group cursor-pointer border-2 hover:border-primary transition-all duration-300 h-full"
+        >
+          <div class="relative">
+            <img
+              src="images/carry-on.jpg"
+              alt=""
+              class="bg-cover relative"
+            />
+            <div class="absolute bottom-50% left-1/4">
+              <h3 class="text-2xl font-bold">Carry-On Collection</h3>
+              <p class="text-lg">
+                TSA-approved and designed for overhead compartments
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+        <div
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          style="background-image: url('images/carry-on.jpg')"
+        >
+          <!-- Dark overlay for better text visibility -->
+          <div class="absolute inset-0 bg-black/30 rounded-lg"></div>
+
+          <!-- Content on top of the image -->
+          <div class="absolute bottom-[8%]">
+            <h3 class="text-2xl font-bold">Checked Luggage</h3>
+            <p class="text-lg text-wrap">
+              Spacious and durable for extended journeys
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          style="background-image: url('images/checked-bag.jpg')"
+        >
+          <!-- Dark overlay for better text visibility -->
+         <div class="absolute inset-0 bg-black/30 rounded-lg"></div>
+          <!-- Content on top of the image -->
+          <div class="absolute bottom-[8%]">
+            <h3 class="text-2xl font-bold">Checked Luggage</h3>
+            <p class="text-lg text-wrap">
+              Spacious and durable for extended journeys
+            </p>
+          </div>
+        </div>
+        <div
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          style="background-image: url('images/weekender.jpg')"
+        >
+          <!-- Dark overlay for better text visibility -->
+        <div class="absolute inset-0 bg-black/30 rounded-lg"></div>
+
+          <!-- Content on top of the image -->
+          <div class="absolute bottom-[8%]">
+            <h3 class="text-2xl font-bold">Checked Luggage</h3>
+            <p class="text-lg text-wrap">
+              Spacious and durable for extended journeys
+            </p>
+          </div>
+        </div>
+        <div
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          style="background-image: url('images/backpack.jpg')"
+        >
+          <!-- Dark overlay for better text visibility -->
+       <div class="absolute inset-0 bg-black/30 rounded-lg"></div>
+
+          <!-- Content on top of the image -->
+          <div class="absolute bottom-[8%]">
+            <h3 class="text-2xl font-bold">Checked Luggage</h3>
+            <p class="text-lg text-wrap">
+              Spacious and durable for extended journeys
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="sunlight2"></div>
+    <!-- section 3 -->
+    <section class="py-35">
+      <h1 class="text-white text-6xl font-bold text-center mb-6">
+        <span class="text-[#dfff98]">Built</span> for Excellence
+      </h1>
+      <p class="text-[#d5d5d5cb] text-center text-2xl mb-16">
+        Every detail designed with your journey in mind
+      </p>
+
+      <div class="grid grid-cols-3 gap-18 mx-14">
+        <div class="grid grid-cols-1 place-items-center">
+          <div
+            class="text-[#dfff98] border bg-[#f5f4f436] h-20 w-20 rounded-full flex items-center justify-center text-3xl mb-6"
+          >
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <p class="text-white text-3xl font-semibold">TSA-Approved Locks</p>
+          <p class="text-[#d9d9d96c] text-xl my-3 text-center">
+            Travel with peace of mind knowing your belongings are secure
+          </p>
+        </div>
+        <div class="grid grid-cols-1 place-items-center">
+          <div
+            class="text-[#dfff98] border bg-[#f5f4f436] h-20 w-20 rounded-full flex items-center justify-center text-3xl mb-6"
+          >
+            <i class="fa-solid fa-feather"></i>
+          </div>
+          <p class="text-white text-3xl font-semibold">Lightweight Design</p>
+          <p class="text-[#d9d9d96c] text-xl my-3 text-center">
+            Premium materials that don't compromise on durability
+          </p>
+        </div>
+        <div class="grid grid-cols-1 place-items-center">
+          <div
+            class="text-[#dfff98] border bg-[#f5f4f436] h-20 w-20 rounded-full flex items-center justify-center text-3xl mb-6"
+          >
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <p class="text-white text-3xl font-semibold">Lifetime Warranty</p>
+          <p class="text-[#d9d9d96c] text-xl my-3 text-center">
+            We stand behind the quality of every piece we create
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 4 -->
+    <section class="grid grid-cols-2 mx-18 my-30 gap-15">
+      <div class="sec1l relative rounded">
+        <img
+          src="/images/lifestyle-travel.jpg"
+          alt=""
+          class="relative rounded-2xl travel"
+        />
+      </div>
+      <div class="sec1r">
+        <h1 class="text-[#ffffff] text-5xl font-bold mb-10">
+          Travel Reimagined
+        </h1>
+        <p class="text-[#d5d5d5cb] text-xl">
+          We believe travel should be effortless and elegant. Our luggage is
+          designed for the modern explorer who values both form and function.
+        </p>
+        <br />
+        <p class="text-[#d5d5d5cb] text-xl">
+          From business trips to exotic adventures, Baggage adapts to your
+          lifestyle with intelligent features and timeless aesthetics.
+        </p>
+        <button
+          class="bg-[#ffffff46] text-white border-[#dfff98] border-2 px-10 py-2 text-lg mt-10 hover:bg-[#ffffff60]"
+        >
+          <a href="/about.html">Discover Our Story</a>
+        </button>
+      </div>
+    </section>
+
+    <!-- section 5 -->
+    <section class="bg-[#d0ff00] grid grid-cols-2 px-18 py-20 gap-10">
+      <div>
+        <h1 class="text-[#1D2530] text-5xl font-bold mb-10">
+          Artisan Craftsmanship
+        </h1>
+        <p class="text-[#000000c0] text-xl">
+          Each piece is meticulously crafted by skilled artisans who bring
+          decades of expertise to every stitch and detail.
+        </p>
+        <br />
+        <p class="text-[#000000c0] text-xl mb-16">
+          We source the finest materials from around the world—Italian leather,
+          German polycarbonate, and Japanese YKK zippers—to create luggage that
+          tells a story of quality.
+        </p>
+
+        <div class="flex my-2">
+          <div class="mx-4">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              height="30px"
+              width="30px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+              ></path>
+            </svg>
+          </div>
+          <p class="text-xl font-semibold">Hand-stitched leather details</p>
+        </div>
+        <div class="flex my-2">
+          <div class="mx-4">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              height="30px"
+              width="30px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+              ></path>
+            </svg>
+          </div>
+          <p class="text-xl font-semibold">Precision-engineered frames</p>
+        </div>
+        <div class="flex my-2">
+          <div class="mx-4">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 16 16"
+              height="30px"
+              width="30px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"
+              ></path>
+            </svg>
+          </div>
+          <p class="text-xl font-semibold">Quality tested for durability</p>
+        </div>
+      </div>
+      <div class=" ">
+        <img src="/images/craftsmanship.jpg" alt="" class="rounded-xl" />
+      </div>
+    </section>
+    <div class="sunlight3"></div>
+    <!-- section 6 -->
+    <section>
+      <h1 class="text-[#ffffff] text-6xl font-bold text-center mt-28 mb-8">
+        Loved by <span class="text-[#dfff98]">Travelers</span>
+      </h1>
+      <div class="sunlight4"></div>
+      <p class="text-[#d5d5d5cb] text-center text-2xl mb-16">
+        Join thousands of satisfied customers worldwide
+      </p>
+
+      <!-- ratings -->
+
+      <div class="flex gap-8 px-8 py-4">
+        <div
+          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
+        >
+          <div class="flex gap-2 text-2xl text-[#ffdd00]">
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="italic text-xl my-8 text-[#ffffff]">
+            "The best luggage I've ever owned. Elegant, durable, and turns heads
+            at every airport."
+          </p>
+          <div class="flex content-center justify-self-start">
+            <div
+              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
+            >
+              <img
+                class="rounded-full object-fill"
+                src="/images/profile1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
+              <p class="text-[#ffffff83]">Travel Blogger</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
+        >
+          <div class="flex gap-2 text-2xl text-[#ffdd00]">
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="italic text-xl my-8 text-[#ffffff]">
+            "The best luggage I've ever owned. Elegant, durable, and turns heads
+            at every airport."
+          </p>
+          <div class="flex content-center justify-self-start">
+            <div
+              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
+            >
+              <img
+                class="rounded-full object-fill"
+                src="/images/profile1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
+              <p class="text-[#ffffff83]">Travel Blogger</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
+        >
+          <div class="flex gap-2 text-2xl text-[#ffdd00]">
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="italic text-xl my-8 text-[#ffffff]">
+            "The best luggage I've ever owned. Elegant, durable, and turns heads
+            at every airport."
+          </p>
+          <div class="flex content-center justify-self-start">
+            <div
+              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
+            >
+              <img
+                class="rounded-full object-fill"
+                src="/images/profile1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
+              <p class="text-[#ffffff83]">Travel Blogger</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 7 -->
+    <section
+      class="bg-[#808080] grid grid-cols-1 place-items-center h-120 pb-10 text-white my-16"
+    >
+      <h1 class="text-[#1e1e1e] text-7xl font-bold text-center mt-28 mb-3">
+        Begin Your Journey
+      </h1>
+      <p class="text-center text-2xl">
+        Experience the perfect blend of luxury, durability, and style
+      </p>
+      <button
+        class="border-2 px-10 py-2 my-10 flex gap-2 text-lg rounded-lg bg-[#c6ff4b] text-black cursor-pointer  hover:bg-[#c6ff4bba]" 
+      >
+       <a href="/collections.html"> Shop all Collections</a>
+        <span class="ml-2 text-black"
+          ><i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+        ></span>
+      </button>
+    </section>
+
+    <!-- footer  -->
+    <footer
+      class="text-lg bg-[#77ae002c] border-t-2 border-[#dfff80b3] py-10 px-2 text-[#f0f0f0e1]"
+    >
+      <p class="text-center">
+        © 2025 Baggage. | Owner: Swapnil Gotsurve | All rights reserved.
+      </p>
+    </footer>
+  </body>
+  <!-- js script -->
+  <script src="./script.js"></script>
+</html>
