@@ -71,10 +71,50 @@ if (gsap && ScrollTrigger) {
       duration: 0.8,
       ease: 'power2.out',
       stagger: 0.12
+      
     }),
-    start: 'top 85%'
+    start: 'top 85%',
+     once:true,
+    toggleActions: "play none none none"
   });
 }
+
+if (gsap && ScrollTrigger) {
+  ScrollTrigger.batch('.f1', {
+    interval: 0.1, // time window (in seconds) for batching
+    batchMax: 6,   // maximum items to batch
+    onEnter: batch => gsap.fromTo(batch, {y: 80, opacity: 0}, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out',
+      stagger: 0.12
+      
+    }),
+    start: 'top 85%',
+     once:true,
+    toggleActions: "play none none none"
+  });
+}
+
+// gsap.from('.f1', {
+//   y:200,
+//   scrollTrigger:{
+//     start:"top 80%",
+//     opacity: 1,
+//       duration: 1,
+//       ease: 'power2.out',
+//       stagger: 0.12
+//   }
+// })
+// sectioin 3
+revealHero('.text-ani', {
+  y: 40,
+  opacity: 0,
+  duration: 0.45,
+  ease: "power2.out",
+  delay: 0.05
+});
 
 // Section 4 - Left column slides in from left
 gsap.from(".sec1l ", {
@@ -86,7 +126,8 @@ gsap.from(".sec1l ", {
   scrollTrigger: {
     trigger: ".sec1l",
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    once:true,
+    toggleActions: "play none none none"
   }
 });
 
@@ -100,7 +141,8 @@ gsap.from(".sec1r", {
   scrollTrigger: {
     trigger: ".sec1r",
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    once:true,
+    toggleActions: "play none none none"
   }
 });
 
@@ -114,7 +156,8 @@ gsap.from(".sec2l ", {
   scrollTrigger: {
     trigger: ".sec2l",
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    once:true,
+    toggleActions: "play none none none"
   }
 });
 
@@ -128,7 +171,8 @@ gsap.from(".sec2r", {
   scrollTrigger: {
     trigger: ".sec2r",
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    once:true,
+    toggleActions: "play none none none"
   }
 });
 
@@ -178,7 +222,7 @@ gsap.utils.toArray('.bg-\\[\\#000\\] > .grid > div').forEach((valueCard, index) 
     scrollTrigger: {
       trigger: valueCard,
       start: "top 85%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none none"
     }
   });
 });
@@ -193,7 +237,7 @@ gsap.from('.bg-\\[\\#dfff98\\] > div:first-child', {
   scrollTrigger: {
     trigger: '.bg-\\[\\#dfff98\\]',
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    toggleActions: "play none none none"
   }
 });
 
@@ -206,7 +250,7 @@ gsap.from('.bg-\\[\\#dfff98\\] > div:last-child', {
   scrollTrigger: {
     trigger: '.bg-\\[\\#dfff98\\]',
     start: "top 80%",
-    toggleActions: "play none none reverse"
+    toggleActions: "play none none none"
   }
 });
 
@@ -223,11 +267,12 @@ gsap.utils.toArray('.bg-\\[\\#ffffff34\\]').forEach((statCard, index) => {
       scrollTrigger: {
         trigger: statCard,
         start: "top 85%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none none"
       }
     });
   }
 });
+
 
 // ============= COLLECTIONS.HTML ANIMATIONS =============
 
@@ -306,7 +351,7 @@ gsap.utils.toArray('.bg-\\[\\#ffffff15\\] > div').forEach((contactCard, index) =
     scrollTrigger: {
       trigger: contactCard,
       start: "top 85%",
-      toggleActions: "play none none reverse"
+      toggleActions: "play none none none"
     }
   });
 });
@@ -321,7 +366,7 @@ gsap.from('form', {
   scrollTrigger: {
     trigger: 'form',
     start: "top 85%",
-    toggleActions: "play none none reverse"
+    toggleActions: "play none none none"
   }
 });
 
@@ -338,7 +383,7 @@ gsap.utils.toArray('section h1').forEach((title) => {
       scrollTrigger: {
         trigger: title,
         start: "top 85%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none none"
       }
     });
   }
@@ -354,7 +399,7 @@ gsap.from('iframe', {
   scrollTrigger: {
     trigger: 'iframe',
     start: "top 85%",
-    toggleActions: "play none none reverse"
+    toggleActions: "play none none none"
   }
 });
 
@@ -400,3 +445,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+
+// to detect current page 
