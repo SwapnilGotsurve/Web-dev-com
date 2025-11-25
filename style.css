@@ -1,7 +1,5 @@
 *{
   scroll-behavior: smooth;
-  
-
 }
 .cta-btn:hover{
 -webkit-box-shadow:0px 0px 23px 5px rgba(223,255,155,0.37);
@@ -61,8 +59,12 @@ z-index: 1;
 
 }
 
-.hero-section{
-  /* background-color: #d0ff00 !important;  */
+.hero-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 9999px;
+  opacity: 1;
 }
 
 
@@ -168,5 +170,110 @@ body::-webkit-scrollbar {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-style: normal;
+}
+
+/* Testimonials Carousel Styles */
+.testimonials-carousel {
+  animation: scroll-left 7s linear infinite;
+  will-change: transform;
+}
+
+.testimonials-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 5));
+  }
+}
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 10px rgba(223, 255, 152, 0.3);
+}
+
+.feature-marquee {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-marquee-wrapper {
+  position: relative;
+}
+
+.feature-marquee-row {
+  overflow: hidden;
+}
+
+.feature-marquee-line {
+  display: inline-flex;
+  gap: 4rem;
+  width: max-content;
+  animation: featureMarquee 22s linear infinite;
+}
+
+.feature-marquee-row:nth-child(2) .feature-marquee-line {
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+
+.feature-marquee-row:nth-child(3) .feature-marquee-line {
+  animation-duration: 30s;
+}
+
+.feature-bullet-list {
+  display: flex;
+  gap: 3.5rem;
+  margin: 0;
+  padding: 0 0 0 2rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.feature-bullet-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.feature-bullet-list li::before {
+  content: "•";
+  color: #dfff98;
+  font-size: 2.5rem;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+}
+
+.feature-bullet-list svg {
+  width: 2.6rem;
+  height: 2.6rem;
+  color: #dfff98;
+  flex-shrink: 0;
+}
+
+.feature-bullet-list span {
+  letter-spacing: 0.05em;
+}
+
+@keyframes featureMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 

@@ -4,12 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Baggage</title>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.js"
-      integrity="sha512-alUs/9QWS9TdxYygQKopHrjMK9T+Tun55+1EKgiG8lCSHSL2Br7p69RsCFCycu2T2I707/8Y0vkyjTVGHdfHUw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+    <!-- ScrollTrigger plugin was previously included here; it must be loaded after GSAP core. -->
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
@@ -35,6 +30,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- Load ScrollTrigger plugin from the same GSAP release, after GSAP core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="style.css" />
     <!-- google fonts    -->
     <!-- logo f -->
@@ -76,29 +73,24 @@
       <!-- left section    -->
       <div class="left relative w-160 mt-36 z-2">
         <p class="text-sm mb-4 font-semibold text-gray-300">
-         <span class="bg-[#ffffff25] p-2 px-4 rounded-4xl"> PREMIUM TRAVEL COMPANIONS</span>
+         <span class="bg-[#ffffff25] p-2 px-4 rounded-4xl hero-badge"> PREMIUM TRAVEL COMPANIONS</span>
         </p>
-        <h1 class="text-[#e0ff9b] text-7xl bangers-regular font-bold">
-          <span class="text-white"
-            ><span
+        <h2 class="text-[#e0ff9b] text-7xl bangers-regular font-bold heading">
+          <span class="text-white">
+            <span
               class=""
               style="
-                color: white;
-                color: rgba(0, 0, 0, 0); /* Fill color of the text */
+                /* Ensure fill is visible while preserving stroke */
+                color: white; /* fill color */
                 -webkit-text-stroke-width: 1px; /* Width of the stroke */
-                -webkit-text-stroke-color: rgb(
-                  255,
-                  255,
-                  255
-                ); /* Color of the stroke */
+                -webkit-text-stroke-color: rgb(255,255,255); /* Color of the stroke */
               "
-              >Journey</span
-            >
-            in</span
-          >
+            >Journey</span>
+            in
+          </span>
           Timeless Style
-        </h1>
-        <h3 class="text-lg mt-10 lato-regular-italic text-[#d5d5d5cb]">
+        </h2>
+        <h3 class="text-lg mt-10 lato-regular-italic text-[#d5d5d5cb] para">
           Handcrafted luggage that combines heritage craftsmanship with modern
           innovation. Built to last a lifetime of adventures.
         </h3>
@@ -113,7 +105,7 @@
                 rgba(223, 255, 152, 1) 80%
               );
             "
-            class="bg-[#e0ff9b] cta-btn border w-55 text-lg rounded-lg py-2 text-black border-1"
+            class="bg-[#e0ff9b] cta-btn border w-55 text-lg rounded-lg py-2 text-black border-1 btn-1"
           >
             <a href="/collections.html">Shop Collections</a>
             <span class="arrow ml-1"
@@ -185,26 +177,9 @@
       </p>
 
       <div class="grid grid-cols-4 gap-8 mx-20 rounded-lg mt-20">
-        <!-- <div
-          class="border px-2 rounded-lg rounded-lg bg-card text-card-foreground shadow-sm overflow-hidden group cursor-pointer border-2 hover:border-primary transition-all duration-300 h-full"
-        >
-          <div class="relative">
-            <img
-              src="images/carry-on.jpg"
-              alt=""
-              class="bg-cover relative"
-            />
-            <div class="absolute bottom-50% left-1/4">
-              <h3 class="text-2xl font-bold">Carry-On Collection</h3>
-              <p class="text-lg">
-                TSA-approved and designed for overhead compartments
-              </p>
-            </div>
-          </div>
-        </div> -->
 
         <div
-          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5 card-1"
           style="background-image: url('images/carry-on.jpg')"
         >
           <!-- Dark overlay for better text visibility -->
@@ -220,7 +195,7 @@
         </div>
 
         <div
-          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5 card-1"
           style="background-image: url('images/checked-bag.jpg')"
         >
           <!-- Dark overlay for better text visibility -->
@@ -234,7 +209,7 @@
           </div>
         </div>
         <div
-          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5 card-1"
           style="background-image: url('images/weekender.jpg')"
         >
           <!-- Dark overlay for better text visibility -->
@@ -249,7 +224,7 @@
           </div>
         </div>
         <div
-          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5"
+          class="relative h-80 rounded-lg border-2 border-white bg-cover bg-no-repeat bg-center text-white px-5 card-1"
           style="background-image: url('images/backpack.jpg')"
         >
           <!-- Dark overlay for better text visibility -->
@@ -429,128 +404,121 @@
         Join thousands of satisfied customers worldwide
       </p>
 
-      <!-- ratings -->
+      <!-- ratings carousel container -->
+      <div class="overflow-hidden px-8 py-4">
+        <div class="testimonials-carousel flex gap-8 cursor-pointer" id="testimonialsCarousel">
+          <!-- Card 1 -->
+          <div class="testimonial-card flex-shrink-0 w-96 border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]">
+            <div class="flex gap-2 text-2xl text-[#ffdd00]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="italic text-xl my-8 text-[#ffffff]">
+              "The best luggage I've ever owned. Elegant, durable, and turns heads at every airport."
+            </p>
+            <div class="flex content-center justify-self-start">
+              <div class="h-15 w-15 object-cover flex items-center justify-center mr-2">
+                <img class="rounded-full object-fill" src="/images/profile1.jpg" alt="Sarah Mitchell" />
+              </div>
+              <div>
+                <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
+                <p class="text-[#ffffff83]">Travel Blogger</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="flex gap-8 px-8 py-4">
-        <div
-          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
-        >
-          <div class="flex gap-2 text-2xl text-[#ffdd00]">
-            <div>
+          <!-- Card 2 -->
+          <div class="testimonial-card flex-shrink-0 w-96 border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]">
+            <div class="flex gap-2 text-2xl text-[#ffdd00]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
+            <p class="italic text-xl my-8 text-[#ffffff]">
+              "Outstanding quality and craftsmanship. Worth every penny for a lifetime traveler."
+            </p>
+            <div class="flex content-center justify-self-start">
+              <div class="h-15 w-15 object-cover flex items-center justify-center mr-2">
+                <img class="rounded-full object-fill" src="/images/profile1.jpg" alt="James Chen" />
+              </div>
+              <div>
+                <p class="text-xl font-semibold text-[#fff]">James Chen</p>
+                <p class="text-[#ffffff83]">Business Traveler</p>
+              </div>
             </div>
           </div>
-          <p class="italic text-xl my-8 text-[#ffffff]">
-            "The best luggage I've ever owned. Elegant, durable, and turns heads
-            at every airport."
-          </p>
-          <div class="flex content-center justify-self-start">
-            <div
-              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
-            >
-              <img
-                class="rounded-full object-fill"
-                src="/images/profile1.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
-              <p class="text-[#ffffff83]">Travel Blogger</p>
-            </div>
-          </div>
-        </div>
 
-        <div
-          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
-        >
-          <div class="flex gap-2 text-2xl text-[#ffdd00]">
-            <div>
+          <!-- Card 3 -->
+          <div class="testimonial-card flex-shrink-0 w-96 border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]">
+            <div class="flex gap-2 text-2xl text-[#ffdd00]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
+            <p class="italic text-xl my-8 text-[#ffffff]">
+              "The design is stunning and the durability is unmatched. My perfect travel companion."
+            </p>
+            <div class="flex content-center justify-self-start">
+              <div class="h-15 w-15 object-cover flex items-center justify-center mr-2">
+                <img class="rounded-full object-fill" src="/images/profile1.jpg" alt="Emma Rodriguez" />
+              </div>
+              <div>
+                <p class="text-xl font-semibold text-[#fff]">Emma Rodriguez</p>
+                <p class="text-[#ffffff83]">Adventure Enthusiast</p>
+              </div>
             </div>
           </div>
-          <p class="italic text-xl my-8 text-[#ffffff]">
-            "The best luggage I've ever owned. Elegant, durable, and turns heads
-            at every airport."
-          </p>
-          <div class="flex content-center justify-self-start">
-            <div
-              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
-            >
-              <img
-                class="rounded-full object-fill"
-                src="/images/profile1.jpg"
-                alt=""
-              />
-            </div>
-            <div>
-              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
-              <p class="text-[#ffffff83]">Travel Blogger</p>
-            </div>
-          </div>
-        </div>
 
-        <div
-          class="border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]"
-        >
-          <div class="flex gap-2 text-2xl text-[#ffdd00]">
-            <div>
+          <!-- Card 4 -->
+          <div class="testimonial-card flex-shrink-0 w-96 border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]">
+            <div class="flex gap-2 text-2xl text-[#ffdd00]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
             </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <div>
-              <i class="fa-solid fa-star"></i>
+            <p class="italic text-xl my-8 text-[#ffffff]">
+              "Customer service is incredible. They truly care about making the perfect luggage."
+            </p>
+            <div class="flex content-center justify-self-start">
+              <div class="h-15 w-15 object-cover flex items-center justify-center mr-2">
+                <img class="rounded-full object-fill" src="/images/profile1.jpg" alt="Michael Park" />
+              </div>
+              <div>
+                <p class="text-xl font-semibold text-[#fff]">Michael Park</p>
+                <p class="text-[#ffffff83]">Corporate Executive</p>
+              </div>
             </div>
           </div>
-          <p class="italic text-xl my-8 text-[#ffffff]">
-            "The best luggage I've ever owned. Elegant, durable, and turns heads
-            at every airport."
-          </p>
-          <div class="flex content-center justify-self-start">
-            <div
-              class="h-15 w-15 object-cover flex items-center justify-center mr-2"
-            >
-              <img
-                class="rounded-full object-fill"
-                src="/images/profile1.jpg"
-                alt=""
-              />
+
+          <!-- Card 5 -->
+          <div class="testimonial-card flex-shrink-0 w-96 border-2 border-[#d1ff6f] pl-6 py-8 rounded-lg bg-[#f0f0f02c]">
+            <div class="flex gap-2 text-2xl text-[#ffdd00]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
             </div>
-            <div>
-              <p class="text-xl font-semibold text-[#fff]">Sarah Mitchell</p>
-              <p class="text-[#ffffff83]">Travel Blogger</p>
+            <p class="italic text-xl my-8 text-[#ffffff]">
+              "Exactly what I was looking for. Stylish, functional, and built to last forever."
+            </p>
+            <div class="flex content-center justify-self-start">
+              <div class="h-15 w-15 object-cover flex items-center justify-center mr-2">
+                <img class="rounded-full object-fill" src="/images/profile1.jpg" alt="Lisa Anderson" />
+              </div>
+              <div>
+                <p class="text-xl font-semibold text-[#fff]">Lisa Anderson</p>
+                <p class="text-[#ffffff83]">Frequent Flyer</p>
+              </div>
             </div>
           </div>
         </div>
