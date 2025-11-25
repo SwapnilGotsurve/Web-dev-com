@@ -125,18 +125,18 @@ revealHero('.about-hero-subtitle', {
 });
 
 // Story section title slides up when in viewport
-gsap.from('.bg-\\[\\#ffffff34\\] h1', {
-  y: 60,
-  opacity: 0,
-  duration: 0.8,
-  ease: "power2.out",
-  immediateRender: false,
-  scrollTrigger: {
-    trigger: '.bg-\\[\\#ffffff34\\] h1',
-    start: "top 85%",
-    toggleActions: "play none none reverse"
-  }
-});
+// gsap.from('.bg-\\[\\#ffffff34\\] h1', {
+//   y: 60,
+//   opacity:1,
+//   duration: 0.8,
+//   ease: "power2.out",
+//   immediateRender: false,
+//   scrollTrigger: {
+//     trigger: '.bg-\\[\\#ffffff34\\] h1',
+//     start: "top 85%",
+//     toggleActions: "play none none reverse"
+//   }
+// });
 
 // Values cards animate one by one
 gsap.utils.toArray('.bg-\\[\\#000\\] > .grid > div').forEach((valueCard, index) => {
