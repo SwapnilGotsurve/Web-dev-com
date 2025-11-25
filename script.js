@@ -77,7 +77,7 @@ if (gsap && ScrollTrigger) {
 }
 
 // Section 4 - Left column slides in from left
-gsap.from(".sec1l", {
+gsap.from(".sec1l ", {
   x: -200,
   opacity: 0,
   duration: 1,
@@ -99,6 +99,34 @@ gsap.from(".sec1r", {
   immediateRender: false,
   scrollTrigger: {
     trigger: ".sec1r",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+// Section5 - Left column slides in from left
+gsap.from(".sec2l ", {
+  x: -200,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: ".sec2l",
+    start: "top 80%",
+    toggleActions: "play none none reverse"
+  }
+});
+
+// Section 5 - Right column slides in from right
+gsap.from(".sec2r", {
+  x: 200,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  immediateRender: false,
+  scrollTrigger: {
+    trigger: ".sec2r",
     start: "top 80%",
     toggleActions: "play none none reverse"
   }
