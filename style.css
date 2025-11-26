@@ -15,6 +15,12 @@ box-shadow: 0px 0px 15px 6px rgba(222,255,152,0.3);
   background-color: #b2d071;
 }
 /* ============== google fonts============= */
+label,input{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 .main-text{
   font-family: "Sansation", sans-serif;
   font-weight: 700;
@@ -74,7 +80,7 @@ header{
   position: fixed;
     
 }
-
+  
 button{
     cursor: pointer;
     border-radius: 4px !important;
@@ -240,7 +246,7 @@ background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(137, 10, 255, 1
 .testimonials-carousel {
   animation: scroll-left 9s linear  infinite ;
   will-change: transform;
-  animation-delay: 2;
+
 }
 
 .testimonials-carousel:hover {
